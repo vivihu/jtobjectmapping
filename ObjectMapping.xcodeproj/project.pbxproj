@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		732CFEBC972A40DA823FD2C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB332D3651C541FD85C1DA74 /* libPods.a */; };
 		91A8BB9716EEB9F60088A084 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A8BB9616EEB9F60088A084 /* UIKit.framework */; };
 		91A8BB9916EEB9F60088A084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A8BB9816EEB9F60088A084 /* Foundation.framework */; };
 		91A8BB9B16EEB9F60088A084 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A8BB9A16EEB9F60088A084 /* CoreGraphics.framework */; };
@@ -18,6 +19,8 @@
 		91A8BBAD16EEB9F60088A084 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A8BBAC16EEB9F60088A084 /* Default-568h@2x.png */; };
 		91A8BBB016EEB9F60088A084 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A8BBAF16EEB9F60088A084 /* ViewController.m */; };
 		91A8BBB316EEB9F60088A084 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A8BBB116EEB9F60088A084 /* ViewController.xib */; };
+		91A8BBBB16EEBE040088A084 /* Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A8BBBA16EEBE040088A084 /* Convert.m */; };
+		91BA5B8B16EEC8900034CC96 /* Weatherinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BA5B8A16EEC8900034CC96 /* Weatherinfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,12 @@
 		91A8BBAE16EEB9F60088A084 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		91A8BBAF16EEB9F60088A084 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		91A8BBB216EEB9F60088A084 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		91A8BBB916EEBE040088A084 /* Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert.h; sourceTree = "<group>"; };
+		91A8BBBA16EEBE040088A084 /* Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Convert.m; sourceTree = "<group>"; };
+		91BA5B8916EEC8900034CC96 /* Weatherinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weatherinfo.h; sourceTree = "<group>"; };
+		91BA5B8A16EEC8900034CC96 /* Weatherinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weatherinfo.m; sourceTree = "<group>"; };
+		AB332D3651C541FD85C1DA74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA6EFC3EBAE42E3B8826F7B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 				91A8BB9716EEB9F60088A084 /* UIKit.framework in Frameworks */,
 				91A8BB9916EEB9F60088A084 /* Foundation.framework in Frameworks */,
 				91A8BB9B16EEB9F60088A084 /* CoreGraphics.framework in Frameworks */,
+				732CFEBC972A40DA823FD2C3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +69,7 @@
 				91A8BB9C16EEB9F60088A084 /* ObjectMapping */,
 				91A8BB9516EEB9F60088A084 /* Frameworks */,
 				91A8BB9416EEB9F60088A084 /* Products */,
+				DBA6EFC3EBAE42E3B8826F7B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +87,7 @@
 				91A8BB9616EEB9F60088A084 /* UIKit.framework */,
 				91A8BB9816EEB9F60088A084 /* Foundation.framework */,
 				91A8BB9A16EEB9F60088A084 /* CoreGraphics.framework */,
+				AB332D3651C541FD85C1DA74 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,6 +99,10 @@
 				91A8BBA616EEB9F60088A084 /* AppDelegate.m */,
 				91A8BBAE16EEB9F60088A084 /* ViewController.h */,
 				91A8BBAF16EEB9F60088A084 /* ViewController.m */,
+				91BA5B8916EEC8900034CC96 /* Weatherinfo.h */,
+				91BA5B8A16EEC8900034CC96 /* Weatherinfo.m */,
+				91A8BBB916EEBE040088A084 /* Convert.h */,
+				91A8BBBA16EEBE040088A084 /* Convert.m */,
 				91A8BBB116EEB9F60088A084 /* ViewController.xib */,
 				91A8BB9D16EEB9F60088A084 /* Supporting Files */,
 			);
@@ -117,6 +133,7 @@
 				91A8BB8F16EEB9F60088A084 /* Sources */,
 				91A8BB9016EEB9F60088A084 /* Frameworks */,
 				91A8BB9116EEB9F60088A084 /* Resources */,
+				D7B970A37834472FB45F13CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +185,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D7B970A37834472FB45F13CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		91A8BB8F16EEB9F60088A084 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -176,6 +210,8 @@
 				91A8BBA316EEB9F60088A084 /* main.m in Sources */,
 				91A8BBA716EEB9F60088A084 /* AppDelegate.m in Sources */,
 				91A8BBB016EEB9F60088A084 /* ViewController.m in Sources */,
+				91A8BBBB16EEBE040088A084 /* Convert.m in Sources */,
+				91BA5B8B16EEC8900034CC96 /* Weatherinfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +295,7 @@
 		};
 		91A8BBB716EEB9F60088A084 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBA6EFC3EBAE42E3B8826F7B /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectMapping/ObjectMapping-Prefix.pch";
@@ -270,6 +307,7 @@
 		};
 		91A8BBB816EEB9F60088A084 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBA6EFC3EBAE42E3B8826F7B /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectMapping/ObjectMapping-Prefix.pch";
@@ -298,6 +336,7 @@
 				91A8BBB816EEB9F60088A084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

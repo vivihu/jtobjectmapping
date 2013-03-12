@@ -1,0 +1,11 @@
+
+PODS:
+- JTObjectMapping (1.1)
+
+DEPENDENCIES:
+- JTObjectMapping
+
+SPEC CHECKSUMS:
+  JTObjectMapping: 245b1123d0f0d7d0d6ff6537f9d23bbe0d108ddc
+
+COCOAPODS: 0.16.4
