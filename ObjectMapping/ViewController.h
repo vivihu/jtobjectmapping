@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Weatherinfo;
+@class ModelViewController;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIScrollViewDelegate>
+{
+    ModelViewController *modelView;
+    UIPageControl *pageControl;
+    NSDateFormatter *dateFormatter;
+    Weatherinfo *weather;
 
+}
+@property (nonatomic,strong)UIScrollView *scroll;
+@property (nonatomic,strong)NSString *tempText;
 @end

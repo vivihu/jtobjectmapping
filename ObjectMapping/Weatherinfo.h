@@ -11,4 +11,7 @@
 
 @interface Weatherinfo : NSObject
 @property (nonatomic,strong)Convert *weatherinfo;
+//@property (nonatomic,strong)NSArray *list;
+//@property (nonatomic,strong)NSArray *rec;
+
 @end

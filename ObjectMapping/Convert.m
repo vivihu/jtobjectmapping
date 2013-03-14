@@ -10,6 +10,5 @@
 
 @implementation Convert
 
-@synthesize temp1,fl1,index_uv,index_d,weather1;
 
 @end

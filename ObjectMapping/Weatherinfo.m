@@ -10,4 +10,5 @@
 
 @implementation Weatherinfo
 @synthesize weatherinfo;
+//@synthesize list,rec;
 @end
