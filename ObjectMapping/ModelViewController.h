@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *weather;
 @property (strong, nonatomic) IBOutlet UILabel *temp;
 @property (strong, nonatomic) IBOutlet UILabel *wind;
+
 @property (strong, nonatomic) Convert *convert;
 @property (nonatomic) int index;
 

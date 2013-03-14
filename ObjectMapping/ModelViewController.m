@@ -16,7 +16,6 @@
 @end
 
 @implementation ModelViewController
-@synthesize wind;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,13 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    Weatherinfo *weather;
-    self.wind.text = [weather valueForKey:[NSString stringWithFormat:@"weather.weatherinfo.wind%d",self.index]];
-    self.temp.text = [NSString stringWithFormat:@"weather.weatherinfo.temp%d",self.index];
+    Weatherinfo *weather = [[Weatherinfo alloc]init];
+    self.wind.text = weather.weatherinfo.wind1;
+//    NSLog(@"%d",self.index);
+    self.temp.text = [self.convert valueForKey:[NSString stringWithFormat:@"weather.weatherinfo.temp%d",self.index]];
     self.weather.text = [NSString stringWithFormat:@"weather.weatherinfo.weather%d",self.index];
     self.view.backgroundColor = [UIColor redColor];
     
-    self.date.text = [dateFormatter stringFromDate:[NSDate date]];
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    self.date.text = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:+(24 * 60 * 60) * self.index]];
     [self weatherImg];
 }
 

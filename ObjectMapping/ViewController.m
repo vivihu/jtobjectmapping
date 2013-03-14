@@ -41,42 +41,43 @@
     [self.view addSubview:pageControl];
 
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://m.weather.com.cn/data/101210301.html"]] options:kNilOptions error:nil];//解析json地址
-
+    
     NSDictionary *list = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                      @"temp1",@"temp1",
-                                                                      @"wind1",@"wind1",
-                                                                      @"weather1",@"weather1",
-                                                                      
-                                                                      @"temp2",@"temp2",
-                                                                      @"wind2",@"wind2",
-                                                                      @"weather2",@"weather2",
-                                                                      
-                                                                      @"temp3",@"temp3",
-                                                                      @"wind3",@"wind3",
-                                                                      @"weather3",@"weather3",
-
-                                                                      @"temp4",@"temp4",
-                                                                      @"wind4",@"wind4",
-                                                                      @"weather4",@"weather4",
-
-                                                                      @"temp5",@"temp5",
-                                                                      @"wind5",@"wind5",
-                                                                      @"weather5",@"weather5",
-
-                                                                      @"temp6",@"temp6",
-                                                                      @"wind6",@"wind6",
-                                                                      @"weather6",@"weather6", nil];//第二层数据
+                          @"temp1",@"temp1",
+                          @"wind1",@"wind1",
+                          @"weather1",@"weather1",
+                          
+                          @"temp2",@"temp2",
+                          @"wind2",@"wind2",
+                          @"weather2",@"weather2",
+                          
+                          @"temp3",@"temp3",
+                          @"wind3",@"wind3",
+                          @"weather3",@"weather3",
+                          
+                          @"temp4",@"temp4",
+                          @"wind4",@"wind4",
+                          @"weather4",@"weather4",
+                          
+                          @"temp5",@"temp5",
+                          @"wind5",@"wind5",
+                          @"weather5",@"weather5",
+                          
+                          @"temp6",@"temp6",
+                          @"wind6",@"wind6",
+                          @"weather6",@"weather6", nil];//第二层数据
     
     NSDictionary *mapping = [NSDictionary dictionaryWithObjectsAndKeys:[Convert mappingWithKey:@"weatherinfo" mapping:list],@"weatherinfo", nil];//第一层数据
     weather = [Weatherinfo objectFromJSONObject:json mapping:mapping];//参1:解析数据 参2:字典映射
-    
+
 
     for (int i=0; i<6; i++) {
         modelView = [[ModelViewController alloc]init];
         modelView.view.frame = CGRectMake(self.view.frame.size.width * i, 0, self.view.frame.size.width, self.view.frame.size.height);
+//        modelView.index = i+1;
+//        NSLog(@"%d",modelView.index);
+
         [scroll addSubview:modelView.view];
-        modelView.index = i+1;
-        NSLog(@"%d",modelView.index);
 //        switch (i) {
 //            case 0:
 //                modelView.wind.text = weather.weatherinfo.wind1;

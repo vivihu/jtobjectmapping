@@ -16,7 +16,6 @@
     UIPageControl *pageControl;
     NSDateFormatter *dateFormatter;
     Weatherinfo *weather;
-
 }
 @property (nonatomic,strong)UIScrollView *scroll;
 @property (nonatomic,strong)NSString *tempText;
