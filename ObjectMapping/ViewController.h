@@ -20,4 +20,5 @@
 }
 @property (nonatomic,strong)UIScrollView *scroll;
 @property (nonatomic,strong)NSString *tempText;
+@property (nonatomic,strong)NSMutableArray *viewControllers;
 @end

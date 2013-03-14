@@ -18,6 +18,17 @@
 @implementation ModelViewController
 @synthesize wind;
 
+//在此方法里完成数据载入
+- (void)loadWeather:(Convert *)weather index:(int)indexNumber {
+    self.convert = weather;
+    self.index = indexNumber;
+    
+    //下
+    self.wind.text = [self.convert valueForKey:[NSString stringWithFormat:@"wind%d",self.index]];
+    
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,14 +41,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    Weatherinfo *weather;
-    self.wind.text = [weather valueForKey:[NSString stringWithFormat:@"weather.weatherinfo.wind%d",self.index]];
-    self.temp.text = [NSString stringWithFormat:@"weather.weatherinfo.temp%d",self.index];
-    self.weather.text = [NSString stringWithFormat:@"weather.weatherinfo.weather%d",self.index];
-    self.view.backgroundColor = [UIColor redColor];
+//    Weatherinfo *weather;
+    NSLog(@"self.convert:%@\nIndex:%d",self.convert,self.index);
     
-    self.date.text = [dateFormatter stringFromDate:[NSDate date]];
-    [self weatherImg];
+//    self.temp.text = [NSString stringWithFormat:@"weather.weatherinfo.temp%d",self.index];
+//    self.weather.text = [NSString stringWithFormat:@"weather.weatherinfo.weather%d",self.index];
+//    self.view.backgroundColor = [UIColor redColor];
+//    
+//    self.date.text = [dateFormatter stringFromDate:[NSDate date]];
+//    [self weatherImg];
 }
 
 - (void)weatherImg

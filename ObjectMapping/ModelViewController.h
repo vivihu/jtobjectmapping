@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Convert.h"
-@class Weatherinfo;
 
 @interface ModelViewController : UIViewController
 {
@@ -22,5 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *wind;
 @property (strong, nonatomic) Convert *convert;
 @property (nonatomic) int index;
+
+- (void)loadWeather:(Convert *)convert index:(int)indexNumber;
 
 @end

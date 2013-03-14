@@ -70,13 +70,19 @@
     NSDictionary *mapping = [NSDictionary dictionaryWithObjectsAndKeys:[Convert mappingWithKey:@"weatherinfo" mapping:list],@"weatherinfo", nil];//第一层数据
     weather = [Weatherinfo objectFromJSONObject:json mapping:mapping];//参1:解析数据 参2:字典映射
     
-
+    ModelViewController *itemViewController = nil;
+//    self.viewControllers = [NSMutableArray arrayWithCapacity:0];
     for (int i=0; i<6; i++) {
-        modelView = [[ModelViewController alloc]init];
-        modelView.view.frame = CGRectMake(self.view.frame.size.width * i, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [scroll addSubview:modelView.view];
-        modelView.index = i+1;
-        NSLog(@"%d",modelView.index);
+        itemViewController = [[ModelViewController alloc] initWithNibName:@"ModelViewController" bundle:nil];
+        itemViewController.view.frame = CGRectMake(self.view.frame.size.width * i, 0, self.view.frame.size.width, self.view.frame.size.height);
+        
+        [scroll addSubview:itemViewController.view];
+//        itemViewController.index = i+1;
+//        itemViewController.convert = weather.weatherinfo;
+        [itemViewController loadWeather:weather.weatherinfo index:(i+1)];
+        NSLog(@"itemViewController.convert.wind1:%@",[itemViewController.convert valueForKey:@"wind1"]);
+        NSLog(@"%d",itemViewController.index);
+//        [self.viewControllers addObject:itemViewController];
 //        switch (i) {
 //            case 0:
 //                modelView.wind.text = weather.weatherinfo.wind1;
