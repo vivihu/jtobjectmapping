@@ -18,10 +18,29 @@
 @implementation ViewController
 @synthesize scroll;
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+//    return (UIInterfaceOrientationMaskPortrait |
+//            UIInterfaceOrientationMaskPortraitUpsideDown);
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         duration:(NSTimeInterval)duration {
+    NSLog(@"animation");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+
+    
+    
     scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     scroll.delegate = self;
     scroll.pagingEnabled = YES;                         //一页页滚动
@@ -33,11 +52,26 @@
     [self.view addSubview:scroll];                      //左右滚动视图
 
     pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0, 425, self.view.frame.size.width, 1)];
+    [pageControl setTranslatesAutoresizingMaskIntoConstraints:NO];
     pageControl.numberOfPages = 6;
     pageControl.userInteractionEnabled = NO;
     pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    [self.view addSubview:pageControl];                  //点点点
+    [self.view addSubview:pageControl];                 //点点点
+    pageControl.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.3f];
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(pageControl);
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[pageControl(>=50)]-(>=10)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==10)-[pageControl(>=50)]-(==10)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];
+    
 
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://m.weather.com.cn/data/101210301.html"]] options:kNilOptions error:nil];//解析json地址
     
