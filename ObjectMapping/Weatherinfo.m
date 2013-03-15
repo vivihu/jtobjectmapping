@@ -9,6 +9,5 @@
 #import "Weatherinfo.h"
 
 @implementation Weatherinfo
-@synthesize weatherinfo;
-//@synthesize list,rec;
+
 @end

@@ -7,15 +7,32 @@
 //
 
 #import "ModelViewController.h"
-#import "Convert.h"
-#import "NSObject+JTObjectMapping.h"
-#import "Weatherinfo.h"
 
 @interface ModelViewController ()
 
 @end
 
 @implementation ModelViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+//在此方法里完成数据载入
+- (void)loadWeatherinfo:(Convert *)weather index:(int)indexNumber {
+//    self.convert = weather;
+    
+    dateFormatter = [[NSDateFormatter alloc]init ];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    self.date.text = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:+(24 * 60 * 60)*(indexNumber-1)]];
+    self.temp.text = [weather valueForKey:[NSString stringWithFormat:@"temp%d",indexNumber]];
+    self.wind.text = [weather valueForKey:[NSString stringWithFormat:@"wind%d",indexNumber]];
+    self.weather.text = [weather valueForKey:[NSString stringWithFormat:@"weather%d",indexNumber]];
+
+    [self weatherImg];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,22 +41,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    Weatherinfo *weather = [[Weatherinfo alloc]init];
-    self.wind.text = weather.weatherinfo.wind1;
-//    NSLog(@"%d",self.index);
-    self.temp.text = [self.convert valueForKey:[NSString stringWithFormat:@"weather.weatherinfo.temp%d",self.index]];
-    self.weather.text = [NSString stringWithFormat:@"weather.weatherinfo.weather%d",self.index];
-    self.view.backgroundColor = [UIColor redColor];
-    
-    dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    self.date.text = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:+(24 * 60 * 60) * self.index]];
-    [self weatherImg];
 }
 
 - (void)weatherImg
@@ -76,6 +77,12 @@
         [self.imgView1 setImage:[UIImage imageNamed:@"overcast.gif"]];
         [self.imgView2 setImage:[UIImage imageNamed:@"rain.gif"]];
     }//阴转雨
+    if (overcast.location != NSNotFound && [self.weather.text hasSuffix:@"云"]) {
+        [self.imgView1 setImage:[UIImage imageNamed:@"overcast.gif"]];
+        [self.imgView2 setImage:[UIImage imageNamed:@"cloudy.gif"]];
+    }//阴转云
+        
+
     
     //等等。。。= =！
     
@@ -96,5 +103,6 @@
         [self.imgView2 setImage:nil];
     }//阴天
 }
+
 
 @end

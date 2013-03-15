@@ -126,6 +126,7 @@
 				91A8BBA616EEB9F60088A084 /* AppDelegate.m */,
 				91A8BBAE16EEB9F60088A084 /* ViewController.h */,
 				91A8BBAF16EEB9F60088A084 /* ViewController.m */,
+				91A8BBB116EEB9F60088A084 /* ViewController.xib */,
 				91BA5B8916EEC8900034CC96 /* Weatherinfo.h */,
 				91BA5B8A16EEC8900034CC96 /* Weatherinfo.m */,
 				91A8BBB916EEBE040088A084 /* Convert.h */,
@@ -133,7 +134,6 @@
 				91BBF3D916F0014A002AE048 /* ModelViewController.h */,
 				91BBF3DA16F0014A002AE048 /* ModelViewController.m */,
 				91BBF3DB16F0014A002AE048 /* ModelViewController.xib */,
-				91A8BBB116EEB9F60088A084 /* ViewController.xib */,
 				91A8BB9D16EEB9F60088A084 /* Supporting Files */,
 			);
 			path = ObjectMapping;
@@ -335,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBA6EFC3EBAE42E3B8826F7B /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectMapping/ObjectMapping-Prefix.pch";
 				INFOPLIST_FILE = "ObjectMapping/ObjectMapping-Info.plist";
@@ -347,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBA6EFC3EBAE42E3B8826F7B /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectMapping/ObjectMapping-Prefix.pch";
 				INFOPLIST_FILE = "ObjectMapping/ObjectMapping-Info.plist";
